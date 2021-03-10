@@ -14,8 +14,67 @@
         <module>jvm</module>
         <module>netty</module>
         <module>common</module>
-        <module>script</module>
     </modules>
+
+    <properties>
+        <dubbo.version>2.7.9</dubbo.version>
+        <jackson.version>2.12.1</jackson.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp -->
+            <dependency>
+                <groupId>com.squareup.okhttp3</groupId>
+                <artifactId>okhttp</artifactId>
+                <version>4.9.1</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.16</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <!-- dubbo -->
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo</artifactId>
+                <version>${dubbo.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-dependencies-zookeeper</artifactId>
+                <version>${dubbo.version}</version>
+                <type>pom</type>
+            </dependency>
+
+
+            <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>30.0-jre</version>
+            </dependency>
+
+
+        </dependencies>
+    </dependencyManagement>
 
 
 </project>
