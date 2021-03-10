@@ -11,9 +11,10 @@ import java.lang.invoke.MethodType;
  **/
 public class MethodHandleDemo {
     public static void main(String[] args) throws Throwable{
+        Demo demo = new Demo();
         MethodHandles.Lookup lookup = MethodHandles.lookup();
         MethodHandle hello = lookup.findVirtual(Demo.class, "hello", MethodType.methodType(String.class));
-        String o = (String) hello.invoke();
-
+        String result = (String) hello.invokeExact(demo);
+        System.out.println(result);
     }
 }
